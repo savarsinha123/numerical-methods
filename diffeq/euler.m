@@ -1,6 +1,6 @@
 % example calculation with y' = y - x, y(0) = 2
 y = @(x, y0) y0 - x;
-sol1 = forward_euler(y, [0; 2], 0.01, 1000);
+sol1 = forwardEuler(y, [0; 2], 0.01, 1000);
 
 % plotting against actual solution y = e^x + x + 1
 figure
@@ -14,7 +14,7 @@ hold off
 
 % example calculation with z'' = -z, z(0) = 1, z'(0) = 0
 z = @(x, y0, y1) -y0;
-sol2 = forward_euler(z, [0; 1; 0], 0.01, 5000);
+sol2 = forwardEuler(z, [0; 1; 0], 0.01, 5000);
 
 % plotting against actual solution y = cos(x)
 figure
@@ -27,7 +27,7 @@ plot(x2, y2)
 hold off
 
 % backward euler for y' = y - x, y(10) = e^10 + 10 + 1
-sol3 = backwards_euler(y, [10; exp(10) + 10 + 1], 0.01, 1000);
+sol3 = backwardsEuler(y, [10; exp(10) + 10 + 1], 0.01, 1000);
 figure
 plot(sol3(1, :), sol3(2, :))
 hold on
@@ -36,7 +36,7 @@ y3 = exp(x3) + x3 + 1;
 plot(x3, y3)
 
 % forward euler
-function m = forward_euler(y, initial, h, n)
+function m = forwardEuler(y, initial, h, n)
     values = zeros(length(initial), n);
     values(:, 1) = initial;
     for i = 1:n
@@ -50,7 +50,7 @@ function m = forward_euler(y, initial, h, n)
 end
 
 % backward euler
-function m = backwards_euler(y, initial, h, n)
+function m = backwardsEuler(y, initial, h, n)
     values = zeros(2, n);
     values(:, 1) = initial;
     for i = 1:n
