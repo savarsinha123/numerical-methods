@@ -55,9 +55,25 @@ https://en.wikipedia.org/wiki/Discrete_Fourier_transform
 https://en.wikipedia.org/wiki/DFT_matrix
 
 ### Fast Fourier Transform (FFT)
+
 FFT refers to any methods of calculating DFT that have complexity $O(n log(n))$
 rather than $O(n^2)$, as is typically standard for simpler DFT methods. The 
 discrete_fourier_transform.m file contains an implementation of the Cooley-Tukey
 Algorithm. See here for more info:
 https://en.wikipedia.org/wiki/Fast_Fourier_transform
 https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm
+
+## Integration
+
+### Gauss-Legendre Quadrature
+
+Gauss-Legendre Quadrature approximates an integral over the interval $[-1, 1]$ 
+by approximating the integral as a weighted sum of function evaluations of the
+nth Legendre polynomial roots, where larger $n$ results in more accurate
+approximations.
+
+### Monte-Carlo Integration
+
+Monte-Carlo integration refers to techniques which involve randomly sampling
+from the integration domain, computing the MLE for the expected value of the
+function, and then multiplying this mean by the volume of the subset. 
