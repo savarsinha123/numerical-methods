@@ -1,6 +1,6 @@
 function I = monteCarloIntegral(f, a, b, subset, n)
     %{
-        monteCarloIntegral: This function evaluates the integral of f over
+        MONTECARLOINTEGRAL: This function evaluates the integral of f over
         the subset using the assumption that the function is enclosed
         within a rectangular region whose bounds are specified by a and b.
         A total of n points are sampled to calculate this integral.

@@ -1,10 +1,10 @@
-function I = gaussQuad(y, a, b, n)
+function I = gaussQuad(f, a, b, n)
     %{
-        gaussQuad: This function evalues the integral of y over the bounds 
+        GAUSSQUAD: This function evalues the integral of f over the bounds 
         defined by a and b using n total nodes
         
         Parameters:
-            y: integrand
+            f: integrand
             a: lower bounds
             b: upper bounds
             n: number of nodes
@@ -20,7 +20,7 @@ function I = gaussQuad(y, a, b, n)
     weights = 2./((1 - roots.^2).*(Pderiv(roots)).^2);
 
     % combine weights in multidimensional case
-    N = nargin(y);
+    N = nargin(f);
     all_weights = 1;
     for i = 1:N
         all_weights = kron(all_weights, weights);
@@ -37,7 +37,7 @@ function I = gaussQuad(y, a, b, n)
 
     % evaluate integral
     diffs = 0.5*(b - a);
-    I = prod(diffs) .* sum(all_weights .* y(ntuples{:})');
+    I = prod(diffs) .* sum(all_weights .* f(ntuples{:})');
 end
 
 function C = cartesian(varargin)

@@ -70,10 +70,13 @@ https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm
 Gauss-Legendre Quadrature approximates an integral over the interval $[-1, 1]$ 
 by approximating the integral as a weighted sum of function evaluations of the
 nth Legendre polynomial roots, where larger $n$ results in more accurate
-approximations.
+approximations. See here for more info:
+https://en.wikipedia.org/wiki/Gauss%E2%80%93Legendre_quadrature
 
 ### Monte-Carlo Integration
 
 Monte-Carlo integration refers to techniques which involve randomly sampling
 from the integration domain, computing the MLE for the expected value of the
-function, and then multiplying this mean by the volume of the subset. 
+function, and then multiplying this mean by the volume of the subset. See here 
+for more info:
+https://en.wikipedia.org/wiki/Monte_Carlo_integration
