@@ -1,10 +1,11 @@
+%% Example code
 % sine wave
 samples = 1000;
 t = linspace(0, 2*pi, samples)';
 x1 = sin(10*t);
 X1 = dft(x1);
 w = fourierFreqs(t);
-figure
+figure('WindowStyle', 'docked');
 plot(w(1:samples/2), (abs(X1(1:samples/2))))
 
 % square wave
@@ -32,7 +33,7 @@ plot(w(1:samples/2), (abs(X31(1:samples/2))))
 plot(w(1:samples/2), (abs(X32(1:samples/2))))
 hold off
 
-
+%% Function implementations
 function X = dft(x)
     % define length of vector
     N = length(x);
